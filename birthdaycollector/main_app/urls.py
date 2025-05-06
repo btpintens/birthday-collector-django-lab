@@ -4,7 +4,9 @@ from .views import (
     BirthdayList, 
     BirthdayDetail, 
     PartyList, 
-    PartyDetail
+    PartyDetail,
+    AddPartyToBirthday,
+    RemovePartyFromBirthday,
 )
 
 urlpatterns = [
@@ -13,4 +15,6 @@ urlpatterns = [
     path('birthdays/<int:id>/', BirthdayDetail.as_view(), name='birthday-detail'), 
     path('party/', PartyList.as_view(), name='party'),
     path('party/<int:id>/', PartyDetail.as_view(), name='party-detail'),
+    path('birthdays/<int:birthday_id>/add_party/<int:party_id>/', AddPartyToBirthday.as_view(), name='add-party-to-birthday'),
+    path('birthdays/<int:birthday_id>/remove_party/<int:party_id>/', RemovePartyFromBirthday.as_view(), name='remove-party-from-birthday'),
 ]

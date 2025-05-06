@@ -8,7 +8,7 @@ class Party(models.Model):
     presents = models.BooleanField(default=False)
     
     def __str__(self):
-        return self.name
+        return self.theme
 
 
 class Birthday(models.Model):
